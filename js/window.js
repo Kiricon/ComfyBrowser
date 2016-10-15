@@ -18,3 +18,13 @@ document.getElementById("min-btn").addEventListener("click", function (e) {
        var window = remote.getCurrentWindow();
        window.close();
   });
+
+
+//####### Listen for search combo
+
+document.addEventListener("keydown", function(e) {
+     if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey))      {
+       e.preventDefault();
+       alert('yes');
+     }
+   }, false);

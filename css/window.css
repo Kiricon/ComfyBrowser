@@ -27,3 +27,19 @@
 #max-btn {
   background: #8BC34A;
 }
+
+
+#searchBar {
+  position: absolute;
+  top: 50px;
+  display:block;
+  width: 400px;
+  font-size: 1.3em;
+  border-radius: 3px;
+  padding: 10px;
+  left: 50%;
+  margin-left: -200px;
+  border: solid 1px #eee;
+  outline: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
