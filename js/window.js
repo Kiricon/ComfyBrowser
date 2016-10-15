@@ -64,8 +64,20 @@ function url(input){
 }
 
 
-//Refresh button
+//Refresh, back and forward button
+webView.addEventListener('load-commit', (e) =>{
+  if(webView.canGoBack()){
+    document.getElementById('back').style.opacity = 1;
+  }else{
+    document.getElementById('back').style.opacity = 0.4
+  }
+});
 
-document.getElementById("refresh").addEventListener('click', function(){
-  webView.src = webView.src;
+
+document.getElementById("refresh").addEventListener('click', () =>{
+  webView.reload()
+});
+
+document.getElementById("back").addEventListener('click', () =>{
+  webView.goBack();
 });
