@@ -12,16 +12,26 @@
       padding: 0px;
       overflow: hidden;
     }
+
     </style>
+    <link rel="stylesheet" href="css/window.css">
   </head>
   <body>
+    <div id="bar">
+      <a href="#">
+        <div id="close-btn" class="windowControl">
+        </div>
+        <div id="min-btn" class="windowControl">
+        </div>
+        <div id="max-btn" class="windowControl">
+        </div>
+      </a>
+     </div>
     <webview id="webView"
       src="https://www.github.com/"
-      style="display:inline-flex; width:100%; height:100%">
+      style="display:inline-flex; width:100%; height:calc( 100% - 30px)">
     </webview>
   </body>
 
-  <script>
-    // You can also require other files to run in this process
-  </script>
+  <script src="js/window.js"></script>
 </html>
