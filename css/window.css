@@ -28,7 +28,7 @@
   background: #8BC34A;
 }
 
-#refresh, #back {
+#refresh, #back, #forward {
   float: right;
   height: 25px;
   width: 25px;

@@ -71,6 +71,12 @@ webView.addEventListener('load-commit', (e) =>{
   }else{
     document.getElementById('back').style.opacity = 0.4
   }
+
+  if(webView.canGoForward()){
+    document.getElementById('forward').style.opacity = 1;
+  }else{
+    document.getElementById('forward').style.opacity = 0.4
+  }
 });
 
 
@@ -80,4 +86,8 @@ document.getElementById("refresh").addEventListener('click', () =>{
 
 document.getElementById("back").addEventListener('click', () =>{
   webView.goBack();
+});
+
+document.getElementById("forward").addEventListener('click', () =>{
+  webView.goForward();
 });
