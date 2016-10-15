@@ -61,6 +61,10 @@
   float:left;
 }
 
+.tab .favicon {
+  height: 15px;
+}
+
 #searchBar {
   position: absolute;
   top: 50px;
