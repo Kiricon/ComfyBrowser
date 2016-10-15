@@ -44,7 +44,7 @@ searchBar.addEventListener('keypress', function(e){
     }
 });
 
-//Returns properly formatted url
+//Returns properly formatted url or google search relavent.
 function url(input){
   var url = input;
 
@@ -62,3 +62,10 @@ function url(input){
 
   return url;
 }
+
+
+//Refresh button
+
+document.getElementById("refresh").addEventListener('click', function(){
+  webView.src = webView.src;
+});

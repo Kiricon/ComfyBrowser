@@ -28,6 +28,13 @@
   background: #8BC34A;
 }
 
+#refresh {
+  float: right;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
 
 #searchBar {
   position: absolute;
