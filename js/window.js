@@ -22,7 +22,13 @@ document.getElementById("min-btn").addEventListener("click", function (e) {
 
 //####### Listen for search combo
 var searchBar = document.getElementById('searchBar');
-var webview = document.getElementById('webView');
+var webView = tabs[tabIndex].view;
+
+document.getElementById('newTab').addEventListener('click', ()=>{
+  tabIndex++;
+  tabs.push(new Tab(tabIndex));
+  tabs[tabIndex].show();
+});
 
 document.addEventListener("keydown", function(e) {
      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey))      {
