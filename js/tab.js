@@ -9,7 +9,9 @@ class Tab {
     this.tab = document.createElement('div');
     this.tab.className = "tab";
     this.tab.innerHTML = '<img class="favicon" src="" /><span class="title"></span>';
-    document.getElementById("tabs").appendChild(this.tab);
+    var newTab = document.getElementById("newTab")
+    newTab.parentNode.insertBefore(this.tab, newTab);
+    //document.getElementById("tabs").appendChild(this.tab);
 
     this.view.addEventListener('did-finish-load', (e) =>{
       this.tab.querySelector(".title").innerHTML = this.view.getTitle();
