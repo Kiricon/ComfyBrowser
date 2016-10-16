@@ -3,30 +3,30 @@ const remote = require('electron').remote;
 document.getElementById("min-btn").addEventListener("click", function (e) {
        var window = remote.getCurrentWindow();
        window.minimize();
-  });
+});
 
-  document.getElementById("max-btn").addEventListener("click", function (e) {
-       var window = remote.getCurrentWindow();
-       if (!window.isMaximized()) {
-           window.maximize();
-       } else {
-           window.unmaximize();
-       }
-  });
+document.getElementById("max-btn").addEventListener("click", function (e) {
+     var window = remote.getCurrentWindow();
+     if (!window.isMaximized()) {
+         window.maximize();
+     } else {
+         window.unmaximize();
+     }
+});
 
-  document.getElementById("close-btn").addEventListener("click", function (e) {
-       var window = remote.getCurrentWindow();
-       window.close();
-  });
-
-
-//####### Listen for search combo
-var searchBar = document.getElementById('searchBar');
-var webView = tabs[tabIndex].view;
+document.getElementById("close-btn").addEventListener("click", function (e) {
+     var window = remote.getCurrentWindow();
+     window.close();
+});
 
 document.getElementById('newTab').addEventListener('click', ()=>{
-  tabIndex++;
+  tabIndex = tabs.length;
   tabs.push(new Tab(tabIndex));
+  tabs.forEach(function(value){
+    value.hide();
+  });
+  console.log(tabs);
+  console.log(tabIndex);
   tabs[tabIndex].show();
 });
 
@@ -41,10 +41,17 @@ document.addEventListener("keydown", function(e) {
    }, false);
 
 
+//####### Listen for search combo
+var searchBar = document.getElementById('searchBar');
+
+function webView(){
+  return tabs[tabIndex].view;
+}
+
 searchBar.addEventListener('keypress', function(e){
   var key = e.which || e.keyCode;
     if (key === 13) { // 13 is enter
-      webView.src = url(searchBar.value);
+      webView().src = url(searchBar.value);
       searchBar.value = "";
       searchBar.style.display = "none";
     }
@@ -70,30 +77,15 @@ function url(input){
 }
 
 
-//Refresh, back and forward button
-webView.addEventListener('load-commit', (e) =>{
-  if(webView.canGoBack()){
-    document.getElementById('back').style.opacity = 1;
-  }else{
-    document.getElementById('back').style.opacity = 0.4
-  }
-
-  if(webView.canGoForward()){
-    document.getElementById('forward').style.opacity = 1;
-  }else{
-    document.getElementById('forward').style.opacity = 0.4
-  }
-});
-
 
 document.getElementById("refresh").addEventListener('click', () =>{
-  webView.reload()
+  webView().reload()
 });
 
 document.getElementById("back").addEventListener('click', () =>{
-  webView.goBack();
+  webView().goBack();
 });
 
 document.getElementById("forward").addEventListener('click', () =>{
-  webView.goForward();
+  webView().goForward();
 });

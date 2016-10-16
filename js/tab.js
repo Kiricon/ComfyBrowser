@@ -26,10 +26,27 @@ class Tab {
   listen(){
 
     this.tab.addEventListener('click', ()=> {
+      tabIndex = this.index;
       tabs.forEach(function(value){
         value.hide();
       });
       this.show();
+      this.refresh();
+    });
+
+    //Refresh, back and forward button
+    this.view.addEventListener('load-commit', (e) =>{
+      if(this.view.canGoBack()){
+        document.getElementById('back').style.opacity = 1;
+      }else{
+        document.getElementById('back').style.opacity = 0.4
+      }
+
+      if(this.view.canGoForward()){
+        document.getElementById('forward').style.opacity = 1;
+      }else{
+        document.getElementById('forward').style.opacity = 0.4
+      }
     });
 
   }
@@ -42,5 +59,21 @@ class Tab {
   hide(){
     this.view.style.display = "none";
     this.tab.style.border = "solid 1px black";
+  }
+
+
+
+  refresh(){
+    if(this.view.canGoBack()){
+      document.getElementById('back').style.opacity = 1;
+    }else{
+      document.getElementById('back').style.opacity = 0.4
+    }
+
+    if(this.view.canGoForward()){
+      document.getElementById('forward').style.opacity = 1;
+    }else{
+      document.getElementById('forward').style.opacity = 0.4
+    }
   }
 }
