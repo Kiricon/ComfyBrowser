@@ -69,10 +69,23 @@
   min-width: 10px;
   overflow: hidden;
   height: 18px;
+  padding-right: 5px;
 }
 
-.tab .favicon {
+.tab .favicon, .tab .close {
   height: 15px;
+}
+
+.tab .close {
+  position:absolute;
+  top: 0px;
+  margin-right: -5px;
+}
+
+.tab .close:hover{
+  background: #F44336;
+  border-radius: 50%;
+  color: white;
 }
 
 #searchBar {

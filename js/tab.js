@@ -8,7 +8,7 @@ class Tab {
 
     this.tab = document.createElement('div');
     this.tab.className = "tab";
-    this.tab.innerHTML = '<img class="favicon" src="" /><span class="title"></span>';
+    this.tab.innerHTML = '<img class="favicon" src="" /><span class="title"></span><img class="close" src="imgs/close.svg" />';
     var newTab = document.getElementById("newTab")
     newTab.parentNode.insertBefore(this.tab, newTab);
     //document.getElementById("tabs").appendChild(this.tab);
