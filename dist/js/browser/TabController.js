@@ -7,6 +7,7 @@ class TabController {
         this.TabIndex = 0;
         this.NewTab = document.getElementById('newTab');
         this.CreateTab();
+        this.Listen();
     }
     // Listen for things to happen
     Listen() {
@@ -17,13 +18,13 @@ class TabController {
     //Create a new tab for us and do all the work
     CreateTab() {
         this.TabIndex = this.Tabs.length;
-        let tab = new Tab_1.Tab(this.TabIndex);
-        tab.tab.addEventListener('click', () => {
-            this.TabIndex = tab.index;
+        let t = new Tab_1.Tab(this.TabIndex);
+        t.tab.addEventListener('click', () => {
+            this.TabIndex = t.index;
             this.ShowTab();
             this.Window.Refresh(this.Current());
         });
-        this.Tabs.push(new Tab_1.Tab(0));
+        this.Tabs.push(t);
         this.ShowTab();
     }
     //Show the current index Tab

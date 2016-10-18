@@ -11,6 +11,7 @@ export class TabController {
 
   constructor(){
     this.CreateTab();
+    this.Listen();
   }
 
   // Listen for things to happen
@@ -23,15 +24,15 @@ export class TabController {
   //Create a new tab for us and do all the work
   CreateTab():void{
     this.TabIndex = this.Tabs.length;
-    let tab : Tab = new Tab(this.TabIndex);
+    let t : Tab = new Tab(this.TabIndex);
 
-    tab.tab.addEventListener('click', ()=> {
-      this.TabIndex = tab.index;
+    t.tab.addEventListener('click', ()=> {
+      this.TabIndex = t.index;
       this.ShowTab();
       this.Window.Refresh(this.Current());
     });
 
-    this.Tabs.push(new Tab(0));
+    this.Tabs.push(t);
     this.ShowTab();
 
   }
