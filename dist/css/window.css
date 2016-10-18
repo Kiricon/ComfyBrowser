@@ -59,24 +59,30 @@
   border: solid 1px #999;
   padding: 5px;
   float: left;
-  max-width: 10%;
+  width: 10%;
   min-width: 10px;
   overflow: hidden;
   height: 18px;
   padding-right: 5px; }
-
-.tab .favicon, .tab .close {
-  height: 15px; }
-
-.tab .close {
-  position: absolute;
-  top: 0px;
-  margin-right: -5px; }
-
-.tab .close:hover {
-  background: #F44336;
-  border-radius: 50%;
-  color: white; }
+  .tab .title {
+    display: block;
+    float: left;
+    width: calc( 100% - 40px );
+    word-break: break-all;
+    padding-left: 10px; }
+  .tab .favicon, .tab .close {
+    height: 15px; }
+  .tab .favicon {
+    float: left;
+    display: block; }
+  .tab .close {
+    position: absolute;
+    top: 8px;
+    margin-right: -5px; }
+  .tab .close:hover {
+    background: #F44336;
+    border-radius: 50%;
+    color: white; }
 
 #searchBar {
   position: absolute;

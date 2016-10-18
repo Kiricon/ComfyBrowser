@@ -62,33 +62,51 @@
 .tab:first-of-type {
   margin-left: 20px;
 }
+
 .tab {
+
   color: black;
   border: solid 1px #999;
   padding: 5px;
   float:left;
-  max-width: 10%;
+  width: 10%;
   min-width: 10px;
   overflow: hidden;
   height: 18px;
   padding-right: 5px;
+
+  .title {
+    display: block;
+    float: left;
+    width: calc( 100% - 40px );
+    word-break: break-all;
+    padding-left: 10px
+  }
+
+  .favicon, .close {
+    height: 15px;
+  }
+
+  .favicon {
+    float: left;
+    display: block;
+  }
+
+  .close {
+    position:absolute;
+    top: 8px;
+    margin-right: -5px;
+  }
+
+  .close:hover{
+    background: #F44336;
+    border-radius: 50%;
+    color: white;
+  }
+
 }
 
-.tab .favicon, .tab .close {
-  height: 15px;
-}
 
-.tab .close {
-  position:absolute;
-  top: 0px;
-  margin-right: -5px;
-}
-
-.tab .close:hover{
-  background: #F44336;
-  border-radius: 50%;
-  color: white;
-}
 
 #searchBar {
   position: absolute;
