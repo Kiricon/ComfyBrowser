@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Kiricon/ComfyBrowser#readme",
   "dependencies": {
-    "electron": "^1.4.3"
+    "electron": "^1.4.3",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-ruby-sass": "^2.1.0"
   }
 }
