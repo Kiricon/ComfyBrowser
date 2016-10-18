@@ -20,9 +20,16 @@ class TabController {
         this.TabIndex = this.Tabs.length;
         let t = new Tab_1.Tab(this.TabIndex);
         t.tab.addEventListener('click', () => {
-            this.TabIndex = t.index;
+            this.TabIndex = this.Tabs.indexOf(t);
             this.ShowTab();
             this.Window.Refresh(this.Current());
+        });
+        t.close.addEventListener('click', () => {
+            t.delete();
+            let index = this.Tabs.indexOf(t);
+            this.Tabs.splice(index, 1);
+            this.TabIndex = 0;
+            this.ShowTab();
         });
         this.Tabs.push(t);
         this.ShowTab();

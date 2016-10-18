@@ -82,7 +82,7 @@
   .tab .close:hover {
     background: #F44336;
     border-radius: 50%;
-    color: white; }
+    color: white !important; }
 
 #searchBar {
   position: absolute;

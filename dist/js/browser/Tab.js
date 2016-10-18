@@ -13,6 +13,7 @@ class Tab {
         var newTab = document.getElementById("newTab");
         newTab.parentNode.insertBefore(this.tab, newTab);
         this.favicon = this.tab.querySelector(".favicon");
+        this.close = this.tab.querySelector(".close");
         //document.getElementById("tabs").appendChild(this.tab);
         this.view.addEventListener('did-finish-load', (e) => {
             this.tab.querySelector(".title").innerHTML = this.view.getTitle();
@@ -28,6 +29,10 @@ class Tab {
     hide() {
         this.view.style.display = "none";
         this.tab.style.border = "solid 1px black";
+    }
+    delete() {
+        this.tab.remove();
+        this.view.remove();
     }
 }
 exports.Tab = Tab;

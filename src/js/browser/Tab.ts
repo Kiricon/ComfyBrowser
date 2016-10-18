@@ -6,6 +6,7 @@ export class Tab {
     view : Electron.WebViewElement;
     tab : HTMLElement;
     favicon: HTMLImageElement;
+    close : Element;
 
   constructor(index: number){
     this.index = index;
@@ -20,6 +21,7 @@ export class Tab {
     var newTab = document.getElementById("newTab")
     newTab.parentNode.insertBefore(this.tab, newTab);
     this.favicon = <HTMLImageElement> this.tab.querySelector(".favicon");
+    this.close = this.tab.querySelector(".close");
     //document.getElementById("tabs").appendChild(this.tab);
 
     this.view.addEventListener('did-finish-load', (e) =>{
@@ -42,6 +44,11 @@ export class Tab {
   hide():void{
     this.view.style.display = "none";
     this.tab.style.border = "solid 1px black";
+  }
+
+  delete():void{
+    this.tab.remove();
+    this.view.remove();
   }
 
 }
