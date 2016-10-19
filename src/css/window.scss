@@ -14,6 +14,7 @@
   float: left;
   margin-top: 8px;
   margin-left: 5px;
+  -webkit-app-region: no-drag;
 }
 
 .windowContro:hover {
@@ -35,11 +36,13 @@
   height: 25px;
   width: 25px;
   cursor: pointer;
+  -webkit-app-region: no-drag;
 }
 
 #newTab {
   float: left;
   display: table;
+  -webkit-app-region: no-drag;
 }
 
 #tabs {
@@ -74,6 +77,7 @@
   overflow: hidden;
   height: 18px;
   padding-right: 5px;
+  -webkit-app-region: no-drag;
 
   .title {
     display: block;
@@ -95,7 +99,6 @@
   .close {
     float: right;
     margin-top: 1px;
-    background: $primary;
     transition: ease all 0.3s;
     color: black;
     border-radius: 50%;
