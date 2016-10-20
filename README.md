@@ -24,7 +24,7 @@ That's all there is to it. In future realeases the build directory may be remove
 
 Okay how do I use this slippery son of a gun?
 
-Well there isn't much yet but I'll keep this update as I go
+Well there isn't much yet but I'll keep this up-to-date as I go.
 
 ###Hotkeys
 ```
