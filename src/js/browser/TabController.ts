@@ -1,6 +1,7 @@
 /// <reference path="../github-electron.d.ts" />
 import {Tab} from "./Tab";
 import {Window} from "./WindowController";
+import {Sorter} from "./Sorter";
 
 export class TabController {
 
