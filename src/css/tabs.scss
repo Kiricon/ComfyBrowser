@@ -93,7 +93,7 @@
 .chrome-tabs .chrome-tab.chrome-tab-current .chrome-tab-background > svg .chrome-tab-background {
   fill: #f2f2f2;
 }
-.chrome-tabs .chrome-tab .chrome-tab-favicon {
+.chrome-tabs .chrome-tab .chrome-tab-favicon, .chrome-tabs .chrome-tab .spinner {
   position: relative;
   margin-left: 1.6em;
   height: 1.6em;
