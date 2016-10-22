@@ -48,6 +48,11 @@
   transition: left 120ms ease-in-out;
   position: absolute; }
 
+@keyframes popup {
+  from {
+    margin-top: 40px; }
+  to {
+    margin-top: 0px; } }
 .chrome-tabs .chrome-tab {
   float: left;
   position: relative;
@@ -55,7 +60,9 @@
   width: 24em;
   border: 0;
   margin: 0;
-  z-index: 1; }
+  z-index: 1;
+  animation-name: popup;
+  animation-duration: 0.3s; }
 
 .chrome-tabs .chrome-tab,
 .chrome-tabs .chrome-tab * {
