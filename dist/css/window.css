@@ -9,12 +9,12 @@ body {
 
 .windowControl {
   border-radius: 50%;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   cursor: pointer;
   float: left;
-  margin-top: 8px;
-  margin-left: 5px;
+  margin-top: 12px;
+  margin-left: 10px;
   -webkit-app-region: no-drag; }
 
 .windowContro:hover {
@@ -109,7 +109,8 @@ body {
 .webView {
   display: inline-flex;
   width: 100%;
-  height: calc( 100% - 30px); }
+  height: calc( 100% - 26px);
+  margin-top: 4px; }
 
 .spinner {
   animation: rotator 1.4s linear infinite; }

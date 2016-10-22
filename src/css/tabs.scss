@@ -3,7 +3,7 @@
   position: relative;
   font-size: 10px;
   height: 4.2em;
-  background: linear-gradient(#dad9da, #d9d8d9);
+  //background: linear-gradient(#dad9da, #d9d8d9);
   padding: 1em 1.2em 0.6em 1.2em;
   border-radius: 0.5em 0.5em 0 0;
   box-shadow: 0 0.05em #b7b7b7;
@@ -26,6 +26,7 @@
   background: #f2f2f2;
   box-shadow: 0 -0.05em rgba(0,0,0,0.27);
   z-index: 20;
+  border-bottom: solid 1px #ccc;
 }
 .chrome-tabs-shell.chrome-tabs-sorting .chrome-tabs:not(.chrome-tabs-clone) .chrome-tab:not(.ui-sortable-draggable-item) {
   opacity: 0;
