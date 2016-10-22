@@ -40,15 +40,21 @@ body {
 #newTab {
   float: left;
   display: table;
-  -webkit-app-region: no-drag; }
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px #aaa;
+  margin-left: 12px;
+  margin-top: 3px;
+  -webkit-transform: skew(25deg);
+  background: #d0d0d0; }
 
 #tabs {
   float: left;
   width: calc( 100% - 150px);
   height: 30px; }
-
-#newTab {
-  padding: 5px; }
 
 #newTab:hover {
   opacity: 0.6; }
