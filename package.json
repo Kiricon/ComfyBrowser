@@ -20,6 +20,7 @@
     "electron": "^1.4.3",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.0",
-    "gulp-ruby-sass": "^2.1.0"
+    "gulp-ruby-sass": "^2.1.0",
+    "sortablejs": "^1.4.2"
   }
 }
