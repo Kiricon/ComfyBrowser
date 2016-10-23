@@ -4,6 +4,7 @@ class Tab {
     constructor(index) {
         this.point = 0;
         this.offset = 0;
+        this.tempOffset = 0;
         this.index = index;
         this.view = document.createElement('webview');
         this.view.src = "http://github.com";

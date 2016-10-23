@@ -10,6 +10,7 @@ export class Tab {
     close : Element;
     point: number = 0;
     offset: number = 0;
+    tempOffset: number = 0;
 
   constructor(index: number){
     this.index = index;

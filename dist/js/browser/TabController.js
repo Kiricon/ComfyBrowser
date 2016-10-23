@@ -31,12 +31,12 @@ class TabController {
                     t.point = e.pageX;
                 }
                 event.preventDefault();
-                let offset = e.pageX - t.point;
-                t.tab.style.marginLeft = offset + t.offset + "px";
+                t.tempOffset = e.pageX - t.point;
+                t.tab.style.marginLeft = t.tempOffset + t.offset + "px";
             }
             else {
                 if (t.point != 0) {
-                    t.offset = t.point;
+                    t.offset = t.tempOffset;
                 }
                 t.point = 0;
             }
