@@ -1,5 +1,6 @@
-/// <reference path="../github-electron.d.ts" />
 "use strict";
+/// <reference path="../github-electron.d.ts" />
+require('electron-context-menu');
 class Tab {
     constructor(index) {
         this.point = 0;
@@ -28,6 +29,13 @@ class Tab {
             this.tab.querySelector(".chrome-tab-title").innerHTML = this.view.getTitle();
             this.loader.style.display = "none";
             this.favicon.style.display = "inline-block";
+            this.contextMenu = require('electron-context-menu')({
+                window: this.view,
+                append: params => [{
+                        label: 'Inspect',
+                        click: this.view.openDevTools()
+                    }]
+            });
         });
         this.view.addEventListener('page-favicon-updated', (e) => {
             this.favicon.style.backgroundImage = "url('" + e.favicons[0] + "')";

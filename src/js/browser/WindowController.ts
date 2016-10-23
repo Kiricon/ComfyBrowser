@@ -81,6 +81,7 @@ export class Window {
 
   //Refresh the window elements
   Refresh(tab: Tab):void {
+
     if(tab.view.canGoBack()){
       this.BackButton.style.opacity = "1";
     }else{
