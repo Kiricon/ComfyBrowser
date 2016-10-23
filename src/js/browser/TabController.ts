@@ -9,6 +9,7 @@ export class TabController {
   TabIndex : number = 0;
   NewTab : HTMLElement = document.getElementById('newTab');
   Window : Window;
+  //Sorter : Sorter = new Sorter(<HTMLElement>document.getElementsByClassName('chrome-tabs')[0]);
 
   constructor(){
     this.CreateTab();
@@ -32,6 +33,24 @@ export class TabController {
       this.ShowTab();
       this.Window.Refresh(this.Current());
     });
+
+    t.tab.addEventListener('mousemove', (e)=>{
+      if (e.which == 1){
+        if(t.point == 0){
+          t.point = e.pageX;
+        }
+        event.preventDefault()
+        let offset = e.pageX - t.point;
+        t.tab.style.marginLeft = offset+t.offset+"px";
+
+      }else{
+        if(t.point != 0){
+          t.offset = t.point;
+        }
+        t.point = 0;
+      }
+    });
+
 
     t.close.addEventListener('click', () => {
       t.delete();

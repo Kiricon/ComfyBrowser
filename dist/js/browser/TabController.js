@@ -2,6 +2,7 @@
 /// <reference path="../github-electron.d.ts" />
 const Tab_1 = require("./Tab");
 class TabController {
+    //Sorter : Sorter = new Sorter(<HTMLElement>document.getElementsByClassName('chrome-tabs')[0]);
     constructor() {
         this.Tabs = new Array();
         this.TabIndex = 0;
@@ -23,6 +24,22 @@ class TabController {
             this.TabIndex = this.Tabs.indexOf(t);
             this.ShowTab();
             this.Window.Refresh(this.Current());
+        });
+        t.tab.addEventListener('mousemove', (e) => {
+            if (e.which == 1) {
+                if (t.point == 0) {
+                    t.point = e.pageX;
+                }
+                event.preventDefault();
+                let offset = e.pageX - t.point;
+                t.tab.style.marginLeft = offset + t.offset + "px";
+            }
+            else {
+                if (t.point != 0) {
+                    t.offset = t.point;
+                }
+                t.point = 0;
+            }
         });
         t.close.addEventListener('click', () => {
             t.delete();
