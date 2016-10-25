@@ -29,11 +29,19 @@ class Tab {
             this.tab.querySelector(".chrome-tab-title").innerHTML = this.view.getTitle();
             this.loader.style.display = "none";
             this.favicon.style.display = "inline-block";
+            let self = this;
             this.contextMenu = require('electron-context-menu')({
                 window: this.view,
                 append: params => [{
                         label: 'Inspect',
-                        click: this.view.openDevTools()
+                        click: (menuItem, browserWindow, event) => {
+                            if (!self.view.isDevToolsOpened()) {
+                                self.view.openDevTools();
+                            }
+                            console.log(menuItem);
+                            console.log(event);
+                            self.view.inspectElement(10, 10);
+                        }
                     }]
             });
         });
