@@ -51,8 +51,8 @@
 }
 
 @keyframes popup{
-  from {margin-top: 40px;}
-  to {margin-top: 0px;}
+  from {margin-top: 40px; width: 0em;}
+  to {margin-top: 0px; width: 24em;}
 }
 .chrome-tabs .chrome-tab {
   float: left;
