@@ -14,6 +14,8 @@ export class Tab {
     offset: number = 0;
     tempOffset: number = 0;
     contextMenu : any;
+    x: number;
+    y: number;
 
   constructor(index: number){
     this.index = index;
@@ -53,9 +55,8 @@ export class Tab {
             if(!self.view.isDevToolsOpened()){
               self.view.openDevTools();
             }
-            console.log(menuItem);
-            console.log(event)
-            self.view.inspectElement(10, 10);
+
+            self.view.inspectElement(this.x, this.y);
           }
         }]
       });
@@ -64,9 +65,17 @@ export class Tab {
     this.view.addEventListener('page-favicon-updated', (e)=>{
     this.favicon.style.backgroundImage = "url('"+e.favicons[0]+"')";
     });
+    this.ListenForXY();
 
+  }
 
-
+  ListenForXY():void{
+    this.view.addEventListener('mousedown', (e: any) =>{
+      if(e.which == 3){
+        this.x = e.clientX;
+        this.y = e.clientY - 40;
+      }
+    });
   }
 
 

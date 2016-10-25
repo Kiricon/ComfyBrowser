@@ -10,6 +10,14 @@ declare namespace Electron {
 	interface Event {
 		preventDefault: Function;
 		sender: NodeJS.EventEmitter;
+		identifier:number;
+    target:EventTarget;
+    screenX:number;
+    screenY:number;
+    clientX:number;
+    clientY:number;
+    pageX:number;
+    pageY:number;
 	}
 
 	type Point = {

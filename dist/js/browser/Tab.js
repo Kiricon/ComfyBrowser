@@ -38,15 +38,22 @@ class Tab {
                             if (!self.view.isDevToolsOpened()) {
                                 self.view.openDevTools();
                             }
-                            console.log(menuItem);
-                            console.log(event);
-                            self.view.inspectElement(10, 10);
+                            self.view.inspectElement(this.x, this.y);
                         }
                     }]
             });
         });
         this.view.addEventListener('page-favicon-updated', (e) => {
             this.favicon.style.backgroundImage = "url('" + e.favicons[0] + "')";
+        });
+        this.ListenForXY();
+    }
+    ListenForXY() {
+        this.view.addEventListener('mousedown', (e) => {
+            if (e.which == 3) {
+                this.x = e.clientX;
+                this.y = e.clientY - 40;
+            }
         });
     }
     show() {
