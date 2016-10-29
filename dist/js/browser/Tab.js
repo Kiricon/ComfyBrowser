@@ -8,7 +8,7 @@ class Tab {
         this.tempOffset = 0;
         this.index = index;
         this.view = document.createElement('webview');
-        this.view.src = "http://github.com";
+        this.view.src = `file://${__dirname}/../../newtab.html`;
         this.view.className = "webView";
         document.body.appendChild(this.view);
         this.tab = document.createElement('div');

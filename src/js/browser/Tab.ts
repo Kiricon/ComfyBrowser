@@ -20,7 +20,7 @@ export class Tab {
   constructor(index: number){
     this.index = index;
     this.view = <Electron.WebViewElement> document.createElement('webview');
-    this.view.src = "http://github.com";
+    this.view.src = `file://${__dirname}/../../newtab.html`;
     this.view.className = "webView";
     document.body.appendChild(this.view);
 
