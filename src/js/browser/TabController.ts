@@ -52,12 +52,14 @@ export class TabController {
     });
 
 
-    t.close.addEventListener('click', () => {
+    t.close.addEventListener('click', (e) => {
+      e.stopPropagation();
       t.delete();
       let index = this.Tabs.indexOf(t);
       this.Tabs.splice(index, 1);
       this.TabIndex = 0;
       this.ShowTab();
+      this.Window.Refresh(this.Current());
     });
 
     this.Tabs.push(t);
@@ -70,6 +72,8 @@ export class TabController {
     this.Tabs.forEach(function(value){
       value.hide();
     });
+    console.log(this.TabIndex);
+    console.log(this.Tabs);
     this.Tabs[this.TabIndex].show();
   }
 
