@@ -1,6 +1,7 @@
 /// <reference path="../github-electron.d.ts" />
 declare function require(name: string);
 require('electron-context-menu');
+import {Settings} from "../utils/Settings";
 
 export class Tab {
 
@@ -40,9 +41,11 @@ export class Tab {
     this.view.addEventListener('did-start-loading', (e) =>{
       this.loader.style.display = "inline-block";
       this.favicon.style.display = "none";
+      Settings.setVisted(this.view.src);
     });
 
     this.view.addEventListener('did-stop-loading', (e) =>{
+
       this.tab.querySelector(".chrome-tab-title").innerHTML = this.view.getTitle();
       this.loader.style.display = "none";
       this.favicon.style.display = "inline-block";

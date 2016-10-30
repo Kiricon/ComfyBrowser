@@ -4,7 +4,7 @@ const config = new Config();
 export class Settings {
 
 
-  static setVisted(url:string):void{
+  public static setVisted(url:string):void{
 
     this.incrementVisit(url);
     this.addToHistory(url);
@@ -12,9 +12,10 @@ export class Settings {
   }
 
   //Increment our visit counter
-  static incrementVisit(url: string):void{
+  private static incrementVisit(url: string):void{
 
-    let formatUrl: string = url.replace(".", "");
+    let formatUrl: string = url.replace(/\./g,'');
+    console.log(formatUrl);
     let key : string = "VisitNumbers."+ formatUrl;
 
     if(config.has(key)){
@@ -28,7 +29,7 @@ export class Settings {
   }
 
   //Add a url to our history
-  static addToHistory(url):void{
+  private static addToHistory(url):void{
     if(config.has("History")){
       let history = config.get("History");
       history.push(url);
@@ -39,7 +40,7 @@ export class Settings {
   }
 
   //Get any value form the config
-  static getValue(key: string):any{
+  public static getValue(key: string):any{
     if(config.has(key)){
       return config.get(key);
     }else{

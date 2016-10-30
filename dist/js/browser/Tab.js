@@ -1,6 +1,7 @@
 "use strict";
 /// <reference path="../github-electron.d.ts" />
 require('electron-context-menu');
+const Settings_1 = require("../utils/Settings");
 class Tab {
     constructor(index) {
         this.point = 0;
@@ -24,6 +25,7 @@ class Tab {
         this.view.addEventListener('did-start-loading', (e) => {
             this.loader.style.display = "inline-block";
             this.favicon.style.display = "none";
+            Settings_1.Settings.setVisted(this.view.src);
         });
         this.view.addEventListener('did-stop-loading', (e) => {
             this.tab.querySelector(".chrome-tab-title").innerHTML = this.view.getTitle();

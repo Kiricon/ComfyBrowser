@@ -8,7 +8,8 @@ class Settings {
     }
     //Increment our visit counter
     static incrementVisit(url) {
-        let formatUrl = url.replace(".", "");
+        let formatUrl = url.replace(/\./g, '');
+        console.log(formatUrl);
         let key = "VisitNumbers." + formatUrl;
         if (config.has(key)) {
             let visitNo = config.get(key);
