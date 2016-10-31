@@ -17,7 +17,7 @@ Then run the application
 electron .
 ```
 
-That's all there is to it. In future realeases the build directory may be removed from the project requiring an extra step to get your application up and running, but that feels kinda silly. 
+That's all there is to it.
 
 
 ##Usage
