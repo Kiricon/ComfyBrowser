@@ -6,7 +6,7 @@ A comfy customizable browser with all the power of google chrome.
 The idea behind this project is that Chrome can be rebuilt but in a manner that lends it self to user fiddling and hacking. 
 
 
-##Building the app
+## Building the app
 First install our node dependencies
 ```
 npm install
@@ -20,13 +20,13 @@ electron .
 That's all there is to it.
 
 
-##Usage
+### Usage
 
 Okay how do I use this slippery son of a gun?
 
 Well there isn't much yet but I'll keep this up-to-date as I go.
 
-###Hotkeys
+### Hotkeys
 ```
 ctrl+s/cmd+s : Open Url Bar
 ```
